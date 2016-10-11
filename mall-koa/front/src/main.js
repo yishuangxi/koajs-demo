@@ -2,12 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import createRoutes from './routes'
 
-// ========================================================
-// Store Instantiation
-// ========================================================
-const initialState = window.___INITIAL_STATE__
-const store = createStore(initialState)
 
 // ========================================================
 // Render Setup
@@ -15,10 +11,15 @@ const store = createStore(initialState)
 const MOUNT_NODE = document.getElementById('root')
 
 let render = () => {
-  const routes = require('./routes/index').default(store)
+  // ========================================================
+  // store And routes Instantiation
+  // ========================================================
+  const initialState = window.___INITIAL_STATE__
+  const store = createStore(initialState)
+  const routes = createRoutes(store)
 
   ReactDOM.render(
-    <AppContainer store={store} routes={routes} />,
+    <AppContainer store={store} routes={routes}/>,
     MOUNT_NODE
   )
 }
@@ -40,7 +41,7 @@ if (__DEV__) {
     const renderError = (error) => {
       const RedBox = require('redbox-react').default
 
-      ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
+      ReactDOM.render(<RedBox error={error}/>, MOUNT_NODE)
     }
 
     // Wrap render in try/catch

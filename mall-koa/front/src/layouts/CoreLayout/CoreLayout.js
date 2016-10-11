@@ -1,19 +1,19 @@
-import React from 'react'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import React, {Component} from 'react'
 import './CoreLayout.scss'
 import '../../styles/core.scss'
 
-export const CoreLayout = ({ children }) => (
-  <div className='container text-center'>
-    <div className='core-layout__viewport'>
-      {children}
-    </div>
-  </div>
-)
+export default class CoreLayout extends Component {
+  static propTypes = {
+    children: React.PropTypes.element.isRequired
+  }
 
-CoreLayout.propTypes = {
-  children : React.PropTypes.element.isRequired
+  render() {
+    return (
+      <div className='core-layout__viewport'>
+        {this.props.children}
+      </div>
+    )
+  }
 }
 
-export default CoreLayout
+

@@ -4,6 +4,7 @@
 var koa = require('koa')
 var app = koa()
 
+//模块挂载
 var onerror = require('koa-onerror')
 var config = require('./config/site')
 var debug = require('debug')('app')
@@ -23,48 +24,20 @@ var render = require('co-views')(__dirname + '/front/src', {
   }
 })
 
+//模块挂载
 app.use(function *(next) {
   this.logger = logger
   this.render = render
   yield next
 })
 
-var indexRouter = require('./handler/index')
-var questionRouter = require('./handler/questions')
-var commentRouter = require('./handler/comments')
-var orderRouter = require('./handler/orders')
-var userRouter = require('./handler/users')
+//路由配置
+app.use(require('./handler/index').routes())
+app.use(require('./handler/questions').routes())
+app.use(require('./handler/comments').routes())
+app.use(require('./handler/orders').routes())
+app.use(require('./handler/users').routes())
 
-app.use(indexRouter.routes())
-app.use(questionRouter.routes())
-app.use(commentRouter.routes())
-app.use(orderRouter.routes())
-app.use(userRouter.routes())
-
+//错误处理
 onerror(app)
-//
-// require('./router')(app)
-//
-// var posts = []
-//
-// function *list() {
-//   this.body = yield render('list', {posts: posts})
-// }
-//
-// function *create(){
-//   var post = yield parse(this)
-//   post.id = posts.push(post) - 1
-//   post.created_at = new Date
-//   this.redirect('/')
-// }
-//
-// function *add(){
-//   this.body = yield render('add')
-// }
-//
-// function *show(id){
-//   var post = posts[id]
-//   this.body = yield render('show', {post: post})
-// }
-
 app.listen(8888)

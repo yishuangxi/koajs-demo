@@ -20,11 +20,11 @@ class Footer extends React.Component {
           发现
         </Link>
 
-        <Link to='/test' activeClassName='route--active' className="footer-item">
+        <Link to='/list' activeClassName='route--active' className="footer-item">
           清单
         </Link>
 
-        <Link to='/test' activeClassName='route--active' className="footer-item">
+        <Link to='/me' activeClassName='route--active' className="footer-item">
           我的
         </Link>
       </div>

@@ -3,12 +3,14 @@ import thunk from 'redux-thunk'
 import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
+import createLogger from 'redux-logger'
 
+const logger = createLogger()
 export default (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const middleware = [thunk]
+  const middleware = [thunk, logger]
 
   // ======================================================
   // Store Enhancers

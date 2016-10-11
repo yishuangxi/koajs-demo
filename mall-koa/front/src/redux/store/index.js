@@ -1,8 +1,10 @@
-import { applyMiddleware, compose, createStore } from 'redux'
+/**
+ * Created by Yi on 11/10/2016.
+ */
+import {applyMiddleware, compose, createStore} from 'redux'
 import thunk from 'redux-thunk'
-import { browserHistory } from 'react-router'
-import makeRootReducer from './reducers'
-import { updateLocation } from './location'
+import {browserHistory} from 'react-router'
+import makeRootReducer from '../reducers'
 import createLogger from 'redux-logger'
 
 export default (initialState = {}) => {
@@ -36,7 +38,7 @@ export default (initialState = {}) => {
   store.asyncReducers = {}
 
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
-  store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
+  // store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {

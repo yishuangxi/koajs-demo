@@ -4,7 +4,7 @@ import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
 import createRoutes from './routes'
 
-
+import {homeTest} from './routes/Home/actions'
 // ========================================================
 // Render Setup
 // ========================================================

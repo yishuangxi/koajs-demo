@@ -5,6 +5,8 @@ import CounterRoute from './Counter'
 import TestRoute from './Test'
 import ListRoute from './List'
 import MeRoute from './Me'
+import FindRoute from './Find'
+import SearchRoute from './Search'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -17,7 +19,9 @@ export const createRoutes = (store) => ({
     CounterRoute(store),
     TestRoute(store),
     ListRoute(store),
-    MeRoute(store)
+    MeRoute(store),
+    FindRoute(store),
+    SearchRoute(store)
   ]
 })
 

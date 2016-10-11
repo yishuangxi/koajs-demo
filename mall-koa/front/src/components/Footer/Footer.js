@@ -13,10 +13,10 @@ class Footer extends React.Component {
           夺宝
         </IndexLink>
 
-        <Link to='/counter' activeClassName='route--active' className="footer-item">
+        <Link to='/search' activeClassName='route--active' className="footer-item">
           分类搜索
         </Link>
-        <Link to='/test' activeClassName='route--active' className="footer-item">
+        <Link to='/find' activeClassName='route--active' className="footer-item">
           发现
         </Link>
 

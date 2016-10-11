@@ -1,15 +1,15 @@
 import React from 'react'
 
 import Footer from '../../../components/Footer'
-export const List = (props) => (
+export const Search = (props) => (
   <div style={{ margin: '0 auto' }} >
-    This is List page
+    This is search page
 
     <Footer/>
   </div>
 )
 
-List.propTypes = {
+Search.propTypes = {
 }
 
-export default List
+export default Search

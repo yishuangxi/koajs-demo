@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import {browserHistory} from 'react-router'
 import makeRootReducer from '../reducers'
 import createLogger from 'redux-logger'
-import { updateLocation } from '../reducers/location'
+import { updateLocation } from '../actions/location'
 
 export default (initialState = {}) => {
   // ======================================================

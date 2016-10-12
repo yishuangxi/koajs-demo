@@ -1,5 +1,5 @@
-import { injectReducer } from '../../store/reducers'
-
+// import { injectReducer } from '../../store/reducers'
+import { injectReducer } from '../../redux/reducers'
 export default (store) => ({
   path : 'list',
   /*  Async getComponent is only invoked when route matches   */
@@ -12,7 +12,7 @@ export default (store) => ({
       const List = require('./containers/ListContainer').default
       const reducer = require('./modules/list').default
 
-      /*  Add the reducer to the store on key 'counter'  */
+      /*  Add the reducer to the store on key 'list'  */
       injectReducer(store, { key: 'list', reducer })
 
       /*  Return getComponent   */

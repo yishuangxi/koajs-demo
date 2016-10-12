@@ -2,9 +2,9 @@
  * Created by Yi on 11/10/2016.
  */
 
-import {combineReducers} from 'redux-reducers'
-import * as homeReducers from '../routes/Home/reducers'
-
+import {combineReducers} from 'redux'
+import * as homeReducers from '../../routes/Home/reducers'
+import locationReducer from './location'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({

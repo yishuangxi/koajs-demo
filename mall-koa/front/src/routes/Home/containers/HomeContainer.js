@@ -7,7 +7,6 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
 import {HOME_TEST} from '../actions'
-import * as HomeActions from '../actions'
 
 
 import Header from '../components/Header'
@@ -16,8 +15,7 @@ import Footer from '../../../components/Footer'
 class HomeContainer extends Component {
   render() {
     console.log(this.props)
-    const {dispatchHomeTest} = this.props
-    dispatchHomeTest()
+    this.props.dispatchHomeTest()
     return (
       <div>
         <Header />
@@ -31,8 +29,8 @@ class HomeContainer extends Component {
 //将state.counter绑定到props的counter
 function mapStateToProps(state) {
   return {
-    a: 'hello',
-    b: 'world'
+    location: 'hello',
+    search: 'world'
   }
 }
 //将action的所有方法绑定到props上

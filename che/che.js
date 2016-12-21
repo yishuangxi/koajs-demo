@@ -2,10 +2,8 @@
  * Created by Yi on 2016/12/20.
  */
 let http = require('http')
-let koa = require('koa')
-let app = koa()
-let KoaRouter = require('koa-router')
-let router = new KoaRouter()
+let app = require('koa')()
+let router = new require('koa-router')()
 let config = require('./config')
 let logger = require('./helper/logger')
 

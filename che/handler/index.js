@@ -2,14 +2,13 @@
  * Created by Yi on 2016/12/20.
  */
 
-let KoaRouter = require('koa-router')
-let router = new KoaRouter()
+let router = new require('koa-router')()
 
-router.get('/', function*IndexHandler() {
+router.get('/', function *indexHandler() {
   this.body = 'this is index page'
 })
 
-router.get('/hot', function*HotHandler() {
+router.get('/hot', function *hotHandler() {
   this.body = 'this is hot page'
 })
 
